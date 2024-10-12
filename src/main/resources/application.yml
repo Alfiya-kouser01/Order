@@ -1,0 +1,18 @@
+server:
+  port: 9094
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8760/eureka/  # Corrected URL for Eureka server
+    register-with-eureka: true  # Ensures the client registers with Eureka
+    fetch-registry: true  # Fetches registry info from Eureka
+
+spring:
+  application:
+    name: ORDER-SERVICE # The name with which this service will be registered in Eureka
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/orderdb  # MongoDB URI
+      repositories:
+        enabled: true  # Enable MongoDB repositories
